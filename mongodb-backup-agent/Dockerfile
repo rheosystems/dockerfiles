@@ -12,4 +12,4 @@ COPY entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]
 
 USER mongodb-mms-agent
-CMD ["mongodb-mms-backup-agent", "-conf", "/etc/mongodb-mms/backup-agent.config"]
+CMD ["mongodb-mms-backup-agent", "-c", "/etc/mongodb-mms/backup-agent.config"]
