@@ -1,0 +1,14 @@
+app:
+  image: rheosystems/hydra:latest
+  ports:
+    - "3000:3000"
+  links:
+    - "db:localhost"
+
+db:
+  image: postgres:latest
+  ports:
+    - "5432:5432"
+  environment:
+    - POSTGRES_USER=hydra
+    - POSTGRES_PASSWORD=hydra
