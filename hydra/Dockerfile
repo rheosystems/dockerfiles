@@ -15,7 +15,7 @@ RUN source ~/.bash_profile && nix-channel --add http://hydra.nixos.org/jobset/hy
 # > createuser -S -D -R -P hydra
 # > createdb -O hydra hydra
 #
-ENV HYDRA_DBI "dbi:Pg:dbname=hydra;host=localhost;user=hydra;"
+ENV HYDRA_DBI dbi:Pg:dbname=hydra;host=localhost;user=hydra;
 ENV HYDRA_DATA /var/lib/hydra
 ONBUILD RUN source ~/.bash_profile && hydra-init && hydra-create-user alice --password foobar --role admin
 ENTRYPOINT ~/.nix-profile/bin/hydra-server
