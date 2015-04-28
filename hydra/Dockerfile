@@ -7,10 +7,12 @@ RUN mkdir -m 0755 /nix && chown hydra /nix \
 USER hydra
 WORKDIR /tmp
 ENV USER="hydra" \
-    HYDRA_DBI="dbi:Pg:dbname=hydra;host=localhost;user=hydra;" \
+    HYDRA_DBI="dbi:Pg:dbname=hydra;host=localhost;user=hydra;password=hydra;" \
     HYDRA_DATA="/var/lib/hydra"
 RUN curl https://nixos.org/nix/install | sh
-RUN source ~/.bash_profile && nix-channel --add http://hydra.nixos.org/jobset/hydra/master/channel/latest && nix-channel --update && nix-env -i hydra
+RUN source ~/.bash_profile \
+     && nix-channel --add http://hydra.nixos.org/jobset/hydra/master/channel/latest \
+     && nix-channel --update && nix-env -i hydra
 
 # Database configuration
 #
