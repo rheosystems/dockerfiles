@@ -1,0 +1,8 @@
+arbiter:
+  image: mongo
+  ports:
+    - "27017:27017"
+  volumes:
+    - "/data/arb:/data/db"
+  command: mongod --smallfiles --nojournal --replSet des2 --noprealloc
+  net: "host"
