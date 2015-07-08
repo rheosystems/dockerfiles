@@ -24,10 +24,11 @@ Start the hydra container:
 `$ docker run --name hydra-app hydra -p 3000:3000 -d rheosystems/hydra:latest`
 
 
-Run the init script from inside the hydra app container:
-`$ docker exec -it hydra-app /bin/bash`
-`$ .nix-profile/hydra-init`
+Run the init script and create a user from inside the hydra app container:
 
+`$ docker exec -it hydra-app /bin/bash`  
+`$ /home/hydra/.nix-profile/hydra-init`  
+`$ /home/hydra/.nix-profile/hydra-create-user alice --full-name 'Alice Q. User' --email-address 'alice@example.org' --password foobar --role admin`
 
 ## References
 
