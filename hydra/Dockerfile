@@ -6,9 +6,7 @@ RUN mkdir -m 0755 /nix && chown hydra /nix \
      && mkdir -m 0755 /var/lib/hydra && chown hydra /var/lib/hydra
 USER hydra
 WORKDIR /tmp
-ENV USER="hydra" \
-    HYDRA_DBI="dbi:Pg:dbname=hydra;host=localhost;user=hydra;password=hydra;" \
-    HYDRA_DATA="/var/lib/hydra"
+ENV USER "hydra"
 RUN curl https://nixos.org/nix/install | sh
 RUN source ~/.bash_profile \
      && nix-channel --add http://hydra.nixos.org/jobset/hydra/master/channel/latest \
@@ -20,6 +18,5 @@ RUN source ~/.bash_profile \
 # > createuser -S -D -R -P hydra
 # > createdb -O hydra hydra
 #
-ONBUILD RUN source ~/.bash_profile && hydra-init && hydra-create-user alice --password foobar --role admin
 ENTRYPOINT ~/.nix-profile/bin/hydra-server
 EXPOSE 3000
