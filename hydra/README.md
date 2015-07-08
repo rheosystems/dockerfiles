@@ -27,8 +27,8 @@ Start the hydra container:
 Run the init script and create a user from inside the hydra app container:
 
 `$ docker exec -it hydra-app /bin/bash`  
-`$ /home/hydra/.nix-profile/hydra-init`  
-`$ /home/hydra/.nix-profile/hydra-create-user alice --full-name 'Alice Q. User' --email-address 'alice@example.org' --password foobar --role admin`
+`$ /home/hydra/.nix-profile/bin/hydra-init`  
+`$ /home/hydra/.nix-profile/bin/hydra-create-user alice --full-name 'Alice Q. User' --email-address 'alice@example.org' --password foobar --role admin`
 
 ## References
 
