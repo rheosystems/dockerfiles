@@ -3,7 +3,7 @@ MAINTAINER Mikkel Christiansen <mikkel@rheosystems.com>
 
 RUN yum install logrotate -y && yum clean all
 
-ENV MMS_VERSION 3.8.0.230-1
+ENV MMS_VERSION 3.9.0.233-1
 RUN curl -sSL https://mms.mongodb.com/download/agent/monitoring/mongodb-mms-monitoring-agent-${MMS_VERSION}.x86_64.rhel7.rpm -o mms.rpm \
      && rpm -U mms.rpm \
      && rm mms.rpm
