@@ -2,7 +2,7 @@ FROM centos:centos7
 
 RUN yum install logrotate -y && yum clean all
 
-ENV MMS_VERSION 5.6.0.624-1
+ENV MMS_VERSION 5.7.0.641-1
 RUN curl -sSL https://mms.mongodb.com/download/agent/backup/mongodb-mms-backup-agent-${MMS_VERSION}.x86_64.rhel7.rpm -o mms.rpm \
      && rpm -U mms.rpm \
      && rm mms.rpm
