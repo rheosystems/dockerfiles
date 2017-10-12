@@ -12,7 +12,7 @@ RUN useradd --system bitcoin
 RUN mkdir /bitcoin && chown -R bitcoin:bitcoin /bitcoin
 
 VOLUME /bitcoin
-EXPOSE 8333 18333
+EXPOSE 8332 8333 18332 18333
 
 USER bitcoin
 
