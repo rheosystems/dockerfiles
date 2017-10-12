@@ -8,13 +8,12 @@ RUN curl -sSL https://bitcoincore.org/bin/bitcoin-core-${BITCOIN_VERSION}${MINOR
      && install -m 0755 -o root -g root -t /usr/local/bin bitcoin-${BITCOIN_VERSION}/bin/* \
      && rm -rf bitcoin.tar.gz bitcoin-${BITCOIN_VERSION}
 
-RUN useradd --system bitcoin
-RUN mkdir /bitcoin && chown -R bitcoin:bitcoin /bitcoin
-
 VOLUME /bitcoin
-EXPOSE 8332 8333 18332 18333
-
+RUN useradd --system bitcoin
+RUN chown -R bitcoin:bitcoin /bitcoin
 USER bitcoin
+
+EXPOSE 8332 8333 18332 18333
 
 ENTRYPOINT ["bitcoind", "-datadir=/bitcoin"]
 CMD ["-server"]
