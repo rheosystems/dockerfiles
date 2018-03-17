@@ -1,9 +1,9 @@
 FROM centos:centos7
 
-ENV BITCOIN_VERSION 0.15.0
-ENV MINOR_VERSION .1
+ENV BITCOIN_VERSION 0.16.0
+# ENV MINOR_VERSION .1
 
-RUN curl -sSL https://bitcoincore.org/bin/bitcoin-core-${BITCOIN_VERSION}${MINOR_VERSION}/bitcoin-${BITCOIN_VERSION}${MINOR_VERSION}-x86_64-linux-gnu.tar.gz -o bitcoin.tar.gz \
+RUN curl -sSL https://bitcoincore.org/bin/bitcoin-core-${BITCOIN_VERSION}/bitcoin-${BITCOIN_VERSION}-x86_64-linux-gnu.tar.gz -o bitcoin.tar.gz \
      && tar xzf bitcoin.tar.gz \
      && install -m 0755 -o root -g root -t /usr/local/bin bitcoin-${BITCOIN_VERSION}/bin/* \
      && rm -rf bitcoin.tar.gz bitcoin-${BITCOIN_VERSION}
