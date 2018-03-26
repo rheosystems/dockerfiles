@@ -14,4 +14,4 @@ RUN chown -R lnd:lnd /lnd
 USER lnd
 
 ENTRYPOINT ["lnd", "--lnddir=/lnd"]
-CMD ["--bitcoin.active", "bitcoin.node=bitcoind"]
+CMD ["--bitcoin.active", "--bitcoin.node=bitcoind"]
