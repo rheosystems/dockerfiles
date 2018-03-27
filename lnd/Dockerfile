@@ -13,5 +13,5 @@ RUN useradd --system lnd
 RUN chown -R lnd:lnd /lnd
 USER lnd
 
-ENTRYPOINT ["lnd", "--lnddir=/lnd"]
+ENTRYPOINT ["lnd", "--lnddir=/lnd", "--configfile=/lnd/lnd.conf"]
 CMD ["--bitcoin.active", "--bitcoin.node=bitcoind"]
