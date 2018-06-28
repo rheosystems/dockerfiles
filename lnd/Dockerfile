@@ -13,5 +13,7 @@ RUN useradd --system lnd
 RUN chown -R lnd:lnd /lnd
 USER lnd
 
+# Ports for server and rpc
+EXPOSE 9735 10009
 ENTRYPOINT ["lnd", "--lnddir=/lnd", "--configfile=/lnd/lnd.conf"]
 CMD ["--bitcoin.active", "--bitcoin.node=bitcoind"]
