@@ -15,5 +15,4 @@ USER lnd
 
 # Ports for server and rpc
 EXPOSE 9735 10009
-ENTRYPOINT ["lnd", "--lnddir=/lnd", "--configfile=/lnd/lnd.conf"]
-CMD ["--bitcoin.active", "--bitcoin.node=bitcoind"]
+ENTRYPOINT ["lnd", "--lnddir=/lnd", "--configfile=/lnd/lnd.conf", "--tlscertpath=/lnd/tls.cert", "--tlskeypath=/lnd/tls.key", "--bitcoin.active", "--bitcoin.mainnet", "--bitcoin.node=bitcoind", "--bitcoind.zmqpath=tcp://127.0.0.1:28332"]
