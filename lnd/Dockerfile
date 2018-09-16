@@ -1,6 +1,6 @@
 FROM centos:centos7
 
-ENV LND_VERSION v0.4.2-beta
+ENV LND_VERSION v0.5-beta
 
 # Install lightning network daemon
 RUN curl -sSL https://github.com/lightningnetwork/lnd/releases/download/${LND_VERSION}/lnd-linux-amd64-${LND_VERSION}.tar.gz -o lnd.tar.gz \
