@@ -1,6 +1,6 @@
 FROM centos:centos7
 
-ENV BITCOIN_VERSION 0.16.3
+ENV BITCOIN_VERSION 0.17.0
 
 RUN curl -sSL https://bitcoincore.org/bin/bitcoin-core-${BITCOIN_VERSION}/bitcoin-${BITCOIN_VERSION}-x86_64-linux-gnu.tar.gz -o bitcoin.tar.gz \
      && tar xzf bitcoin.tar.gz \
